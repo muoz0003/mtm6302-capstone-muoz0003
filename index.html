@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NASA Picture of the Day</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <img src="pictures/nasa-logo.png" alt="NASA Logo" class="logo">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <h1>NASA Picture of the Day</h1>
+        <label for="date-picker">Choose a date:</label>
+        <input type="date" id="date-picker">
+        <div class="content-container">
+            <div class="image-container">
+                <img id="nasa-image" src="" alt="NASA Picture of the Day">
+            </div>
+            <div class="description-container">
+                <h2>Description</h2>
+                <p id="nasa-description"></p>
+            </div>
+        </div>
+        <button id="favorite-button">Favorite</button>
+        
+        <h2>Additional Images</h2>
+        <div id="additional-images-container">
+            <div class="additional-image">
+                <h3>The day before</h3>
+                <img id="yesterday-image" src="" alt="Yesterday's NASA Picture">
+            </div>
+            <div class="additional-image">
+                <h3>Random Picture</h3>
+                <img id="random-image" src="" alt="Random NASA Picture">
+            </div>
+            <div class="additional-image">
+                <h3>Last Year</h3>
+                <img id="last-year-image" src="" alt="Last Year's NASA Picture">
+            </div>
+        </div>
+        
+        <div id="favorites-container">
+            <h2>Favorites</h2>
+            <div id="favorites"></div>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>Discover the Cosmos, One Day at a Time.</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>NASA's Picture of the Day offers a daily glimpse into the wonders of the universe, featuring stunning images of space, Earth, and beyond. Each image is accompanied by expert insights, inviting you to explore the cosmos through the lens of NASA’s groundbreaking missions and research.</p>
+                <div class="stats">
+                    <div class="stat">
+                        <div class="count-container">
+                            <span class="count" data-target="6000">0</span>
+                            <span class="plus-sign">+</span>
+                        </div>
+                        <p>Pictures</p>
+                    </div>
+                    <div class="stat">
+                        <div class="count-container">
+                            <span class="count" data-target="60">0</span>
+                            <span class="plus-sign">+</span>
+                        </div>
+                        <p>Satellites</p>
+                    </div>
+                    <div class="stat">
+                        <div class="count-container">
+                            <span class="count" data-target="10000">0</span>
+                            <span class="plus-sign">+</span>
+                        </div>
+                        <p>Images shown today</p>
+                    </div>
+                </div>
+            </div>
+            <div class="about-image">
+                <img src="pictures/AdobeStock_413673598.jpeg" alt="Cosmos Image">
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="contact-content">
+            <div class="contact-text">
+                <h2>Get in touch and bring your vision to life.</h2>
+                <p>NASA greatly values your opinions and suggestions. Please share your thoughts with us, and we will reach out to you as soon as possible.</p>
+            </div>
+            <div class="contact-form">
+                <form>
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone (optional)</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="4" required></textarea>
+                    </div>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <div id="full-size-image-container" class="hidden">
+        <button class="close-button">&times;</button>
+        <div class="full-size-content">
+            <img id="full-size-image" src="" alt="Full Size NASA Picture">
+            <div class="full-size-description">
+                <h2>Description</h2>
+                <p id="full-size-description"></p>
+            </div>
+        </div>
+    </div>
+
+    <div id="additional-image-container" class="hidden">
+        <button class="close-button">&times;</button>
+        <img id="additional-image" src="" alt="Additional NASA Picture">
+        <div class="additional-description">
+            <h2>Description</h2>
+            <p id="additional-description"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
