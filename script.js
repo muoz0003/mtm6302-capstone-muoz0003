@@ -15,6 +15,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const additionalImageContainer = document.getElementById('additional-image-container');
     const additionalImage = document.getElementById('additional-image');
     const additionalDescription = document.getElementById('additional-description');
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
 
     let favorites = [];
 
@@ -214,4 +216,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     observer.observe(aboutSection);
+
+    // Hamburger menu toggle
+    hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
 });

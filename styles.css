@@ -1,10 +1,23 @@
 body {
-    background-color: black;
+    background: url('pictures/AdobeStock_353024255.jpeg') no-repeat center center fixed;
+    background-size: cover;
     color: white;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     scroll-behavior: smooth; /* Enable smooth scrolling */
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* 80% transparency */
+    z-index: -1;
 }
 
 header {
@@ -21,6 +34,7 @@ header nav {
     align-items: center;
     justify-content: center;
     gap: 20px;
+    position: relative;
 }
 
 header nav .logo {
@@ -28,28 +42,48 @@ header nav .logo {
     margin-right: 20px;
 }
 
-header nav ul {
-    list-style: none;
+header nav .nav-links {
     display: flex;
     gap: 30px; /* Increased gap between menu items */
+    list-style: none;
     margin: 0;
     padding: 0;
 }
 
-header nav ul li {
+header nav .nav-links li {
     display: inline;
 }
 
-header nav ul li a {
+header nav .nav-links li a {
     color: white;
     text-decoration: none;
     font-size: 1.5em; /* Increased font size */
     padding: 10px 20px; /* Increased padding */
 }
 
+header nav .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+}
+
+header nav .hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    border-radius: 5px;
+}
+
 section {
-    padding: 100px 20px;
+    padding: 100px 10px; /* Reduced padding */
     text-align: center;
+}
+
+#about, #contact {
+    padding: 20px 10px; /* Dedicated padding for About and Contact sections */
 }
 
 .content-container {
@@ -58,24 +92,25 @@ section {
     align-items: center;
     gap: 20px;
     margin: 20px auto;
-    max-width: 80%;
+    max-width: 90%; /* Increased max-width */
 }
 
 .image-container {
     border: 2px solid #315385; /* Changed frame color */
     padding: 10px;
-    max-width: 50%; /* Smaller size */
+    max-width: 30%; /* Adjusted size */
 }
 
 #nasa-image {
-    max-width: 100%;
+    width: 100%; /* Ensure the image fills the container */
     height: auto;
     cursor: pointer; /* Indicate that the image is clickable */
 }
 
 .description-container {
     text-align: left;
-    max-width: 50%;
+    max-width: 70%; /* Increased size */
+    text-align: justify;
 }
 
 #favorites-container {
@@ -97,7 +132,7 @@ section {
 }
 
 .favorite-item img {
-    width: 100px;
+    width: 300px;
     cursor: pointer;
 }
 
@@ -125,7 +160,7 @@ section {
 }
 
 .additional-image img {
-    width: 100px;
+    width: 300px;
     height: auto;
     cursor: pointer;
     border: 2px solid #315385; /* Changed frame color */
@@ -216,9 +251,10 @@ section {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 20px;
+    gap: 50px;
     margin: 20px auto;
-    max-width: 80%;
+    max-width: 90%; /* Increased max-width */
+    text-align: justify;
 }
 
 .about-text {
@@ -249,7 +285,7 @@ section {
     align-items: center;
     justify-content: center;
     border: 2px solid #379CAC;
-    padding: 10px;
+    padding: 30px;
     border-radius: 10px;
 }
 
@@ -270,9 +306,10 @@ section {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    gap: 20px;
+    gap: 50px;
     margin: 20px auto;
-    max-width: 80%;
+    max-width: 90%; /* Increased max-width */
+    text-align: justify;
 }
 
 .contact-text {
@@ -306,7 +343,7 @@ section {
     font-size: 1em;
 }
 
-.contact-form button {
+.styled-button {
     padding: 10px;
     background-color: #379CAC;
     color: white;
@@ -316,6 +353,59 @@ section {
     font-size: 1em;
 }
 
-.contact-form button:hover {
+.styled-button:hover {
     background-color: #2a7a8a;
+}
+
+#about, #contact {
+    max-width: 90%; /* Increased max-width */
+    margin: 0 auto;
+}
+
+/* Reduce gap between sections */
+#additional-images-container {
+    margin-bottom: 0;
+}
+
+#about {
+    margin-top: 0;
+}
+
+/* Center the specific h2 element */
+#about h2 {
+    text-align: center;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    header nav .nav-links {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        background-color: rgba(0, 0, 0, 0.9);
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        width: 200px;
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    header nav .nav-links.active {
+        display: flex;
+    }
+
+    header nav .hamburger {
+        display: flex;
+        right: 30px; /* Adjusted to not be too close to the right edge */
+    }
+
+    .about-content, .contact-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-text, .contact-text, .contact-form {
+        max-width: 100%;
+    }
 }
