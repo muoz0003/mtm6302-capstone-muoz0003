@@ -17,14 +17,39 @@ document.addEventListener('DOMContentLoaded', () => {
     const additionalDescription = document.getElementById('additional-description');
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
+    const backToTopBtn = document.getElementById('backToTopBtn');
+    const canvas = document.getElementById('stars');
+    const ctx = canvas.getContext('2d');
 
     let favorites = [];
 
-    // Set default date to today
-    const today = new Date().toISOString().split('T')[0];
-    datePicker.value = today;
-    fetchNasaImage(today);
-    fetchAdditionalImages(today);
+    // Show the button when the user scrolls down 100px from the top
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 100) {
+            backToTopBtn.style.display = 'block';
+        } else {
+            backToTopBtn.style.display = 'none';
+        }
+    });
+
+    // When the user clicks on the button, scroll to the top of the page
+    backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+
+    // Set default date to today using local time
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = String(today.getMonth() + 1).padStart(2, '0'); // Months are zero-based
+    const day = String(today.getDate()).padStart(2, '0');
+    const formattedDate = `${year}-${month}-${day}`;
+
+    datePicker.value = formattedDate;
+    fetchNasaImage(formattedDate);
+    fetchAdditionalImages(formattedDate);
 
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
@@ -183,7 +208,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Number counting animation
     const counters = document.querySelectorAll('.count');
-    const speed = 200; // The lower the slower
+    const speed = 50; // The lower the slower
 
     const countUp = () => {
         counters.forEach(counter => {
@@ -216,6 +241,69 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     observer.observe(aboutSection);
+
+    // Add event listeners to gallery images
+    document.querySelectorAll('.gallery-image').forEach(image => {
+        image.addEventListener('click', function() {
+            const src = this.src;
+            const alt = this.alt;
+            const modalImage = document.getElementById('modalImage');
+            modalImage.src = src;
+            modalImage.alt = alt;
+            // Show the modal using jQuery
+            $('#imageModal').modal('show');
+        });
+    });
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const stars = [];
+    const numStars = 100;
+
+    for (let i = 0; i < numStars; i++) {
+        stars.push({
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height,
+            radius: Math.random() * 1.5,
+            alpha: Math.random(),
+            dx: Math.random() * 0.5,
+            dy: Math.random() * 0.5
+        });
+    }
+
+    function drawStars() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
+        ctx.beginPath();
+        for (let i = 0; i < numStars; i++) {
+            const star = stars[i];
+            ctx.moveTo(star.x, star.y);
+            ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2, true);
+        }
+        ctx.fill();
+        updateStars();
+    }
+
+    function updateStars() {
+        for (let i = 0; i < numStars; i++) {
+            const star = stars[i];
+            star.x += star.dx;
+            star.y += star.dy;
+
+            if (star.x > canvas.width) star.x = 0;
+            if (star.y > canvas.height) star.y = 0;
+            if (star.x < 0) star.x = canvas.width;
+            if (star.y < 0) star.y = canvas.height;
+        }
+    }
+
+    function animate() {
+        drawStars();
+        requestAnimationFrame(animate);
+    }
+
+    animate();
 
     // Hamburger menu toggle
     hamburger.addEventListener('click', () => {
