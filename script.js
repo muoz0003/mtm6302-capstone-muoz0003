@@ -100,7 +100,8 @@ document.addEventListener('DOMContentLoaded', () => {
     nasaImage.addEventListener('click', () => {
         fullSizeImage.src = nasaImage.src;
         fullSizeImage.alt = nasaImage.alt;
-        fullSizeDescription.style.display = 'none'; // Hide the description
+        fullSizeDescription.textContent = nasaDescription.textContent; // Set the description text
+        fullSizeDescription.style.display = 'block'; // Ensure the description is visible
         fullSizeImageContainer.classList.remove('hidden');
     });
 

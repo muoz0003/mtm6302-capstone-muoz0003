@@ -35,7 +35,9 @@
                     <label for="date-picker" class="h4">Choose a date:</label>
                 </div>
                 <div class="col-md-4">
-                    <input type="date" id="date-picker" class="form-control form-control-lg">
+                    <div class="date-picker-container">
+                        <input type="date" id="date-picker" class="form-control form-control-lg">
+                    </div>
                 </div>
             </div>
         </div>
@@ -50,7 +52,7 @@
         </div>
         <button id="favorite-button" class="styled-button btn btn-primary w-20 mt-3">Favorite</button> 
         <div id="favorites-container" class="mt-3">
-        <div id="favorites" class="d-flex flex-wrap"></div>
+            <div id="favorites" class="d-flex flex-wrap"></div>
         </div>
 
         <h2 class="display-4 h1">More Images</h2>
@@ -103,71 +105,53 @@
             </div>
         </div>
     </section>
-            <!-- Interactive Gallery Start -->
-<div class="gallery mt-4">
-    <div class="container">
-        <!-- Row 1 -->
-        <div class="row">
-            <div class="col-md-3 mb-3">
-                <!-- Image 1 -->
-                <img src="pictures/gallery13.jpg" alt="Image 1" class="img-thumbnail gallery-image">
+
+    <div class="gallery mt-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 mb-3">
+                    <img src="pictures/gallery13.jpg" alt="Image 1" class="img-thumbnail gallery-image">
+                </div>
+                <div class="col-md-3 mb-3">
+                    <img src="pictures/gallery14.jpg" alt="Image 2" class="img-thumbnail gallery-image">
+                </div>
+                <div class="col-md-3 mb-3">
+                    <img src="pictures/gallery3.jpg" alt="Image 3" class="img-thumbnail gallery-image">
+                </div>
+                <div class="col-md-3 mb-3">
+                    <img src="pictures/gallery15.jpg" alt="Image 4" class="img-thumbnail gallery-image">
+                </div>
             </div>
-            <div class="col-md-3 mb-3">
-                <!-- Image 2 -->
-                <img src="pictures/gallery14.jpg" alt="Image 2" class="img-thumbnail gallery-image">
+            <div class="row">
+                <div class="col-md-3 mb-3">
+                    <img src="pictures/gallery16.jpg" alt="Image 5" class="img-thumbnail gallery-image">
+                </div>
+                <div class="col-md-3 mb-3">
+                    <img src="pictures/gallery17.jpg" alt="Image 6" class="img-thumbnail gallery-image">
+                </div>
+                <div class="col-md-3 mb-3">
+                    <img src="pictures/gallery7.jpg" alt="Image 7" class="img-thumbnail gallery-image">
+                </div>
+                <div class="col-md-3 mb-3">
+                    <img src="pictures/gallery8.jpg" alt="Image 8" class="img-thumbnail gallery-image">
+                </div>
             </div>
-            <div class="col-md-3 mb-3">
-                <!-- Image 3 -->
-                <img src="pictures/gallery3.jpg" alt="Image 3" class="img-thumbnail gallery-image">
-            </div>
-            <div class="col-md-3 mb-3">
-                <!-- Image 4 -->
-                <img src="pictures/gallery15.jpg" alt="Image 4" class="img-thumbnail gallery-image">
-            </div>
-        </div>
-        <!-- Row 2 -->
-        <div class="row">
-            <div class="col-md-3 mb-3">
-                <!-- Image 5 -->
-                <img src="pictures/gallery16.jpg" alt="Image 5" class="img-thumbnail gallery-image">
-            </div>
-            <div class="col-md-3 mb-3">
-                <!-- Image 6 -->
-                <img src="pictures/gallery17.jpg" alt="Image 6" class="img-thumbnail gallery-image">
-            </div>
-            <div class="col-md-3 mb-3">
-                <!-- Image 7 -->
-                <img src="pictures/gallery7.jpg" alt="Image 7" class="img-thumbnail gallery-image">
-            </div>
-            <div class="col-md-3 mb-3">
-                <!-- Image 8 -->
-                <img src="pictures/gallery8.jpg" alt="Image 8" class="img-thumbnail gallery-image">
-            </div>
-        </div>
-        <!-- Row 3 -->
-        <div class="row">
-            <div class="col-md-3 mb-3">
-                <!-- Image 9 -->
-                <img src="pictures/gallery9.jpg" alt="Image 9" class="img-thumbnail gallery-image">
-            </div>
-            <div class="col-md-3 mb-3">
-                <!-- Image 10 -->
-                <img src="pictures/gallery10.jpg" alt="Image 10" class="img-thumbnail gallery-image">
-            </div>
-            <div class="col-md-3 mb-3">
-                <!-- Image 11 -->
-                <img src="pictures/gallery11.jpg" alt="Image 11" class="img-thumbnail gallery-image">
-            </div>
-            <div class="col-md-3 mb-3">
-                <!-- Image 12 -->
-                <img src="pictures/gallery12.jpg" alt="Image 12" class="img-thumbnail gallery-image">
+            <div class="row">
+                <div class="col-md-3 mb-3">
+                    <img src="pictures/gallery9.jpg" alt="Image 9" class="img-thumbnail gallery-image">
+                </div>
+                <div class="col-md-3 mb-3">
+                    <img src="pictures/gallery10.jpg" alt="Image 10" class="img-thumbnail gallery-image">
+                </div>
+                <div class="col-md-3 mb-3">
+                    <img src="pictures/gallery11.jpg" alt="Image 11" class="img-thumbnail gallery-image">
+                </div>
+                <div class="col-md-3 mb-3">
+                    <img src="pictures/gallery12.jpg" alt="Image 12" class="img-thumbnail gallery-image">
+                </div>
             </div>
         </div>
     </div>
-</div>
-<!-- Interactive Gallery End -->
-        </div>
-    </section>
 
     <section id="contact" class="py-5">
         <div class="container">
@@ -238,7 +222,7 @@
     </footer>
     <!-- Back to Top Button -->
     <button id="backToTopBtn" class="btn btn-primary">
-    <i class="fas fa-arrow-up"></i>
+        <i class="fas fa-arrow-up"></i>
     </button>
     <!-- Include jQuery and Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
