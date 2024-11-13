@@ -357,21 +357,17 @@ section {
 }
 
 /* Gallery Item Container */
-.gallery-item {
-    width: 100%;
-    height: 200px; 
-    overflow: hidden;
-    position: relative;
-    
-}
-
-/* Gallery Images */
+/* Gallery Images Hover Effect */
 .gallery-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
     cursor: pointer;
-    
+    transition: transform 0.3s ease-in-out; /* Smooth transition for the pop-up effect */
+}
+
+.gallery-image:hover {
+    transform: scale(1.1); /* Scale the image to 110% on hover */
 }
 
 .img-thumbnail {

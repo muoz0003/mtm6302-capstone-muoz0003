@@ -21,31 +21,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const backToTopBtn = document.getElementById('backToTopBtn');
     const canvas = document.getElementById('stars');
     const ctx = canvas.getContext('2d');
-    const quoteText = document.getElementById('quote-text');
-    const quoteAuthor = document.getElementById('quote-author');
+   
 
     let favorites = [];
-
-    // Fetch and display the quote
-    async function fetchQuote() {
-        try {
-            const response = await fetch('https://type.fit/api/quotes');
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            const data = await response.json();
-            const randomIndex = Math.floor(Math.random() * data.length);
-            const quote = data[randomIndex];
-            quoteText.textContent = quote.text || 'No quote available';
-            quoteAuthor.textContent = quote.author ? `- ${quote.author}` : '- Unknown';
-        } catch (error) {
-            console.error('Error fetching the quote:', error);
-            quoteText.textContent = 'Failed to fetch quote';
-            quoteAuthor.textContent = '';
-        }
-    }
-
-    fetchQuote();
 
     // Show the button when the user scrolls down 100px from the top
     window.addEventListener('scroll', () => {
@@ -281,6 +259,8 @@ document.addEventListener('DOMContentLoaded', () => {
             $('#imageModal').modal('show');
         });
     });
+
+    // Background night sky animation
 
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
