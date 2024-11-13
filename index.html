@@ -10,190 +10,192 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body class="text-white">
-    <canvas id="stars"></canvas>
+    <canvas id="stars" aria-hidden="true"></canvas>
     <header>
-        <nav>
+        <nav aria-label="Main Navigation">
             <img src="pictures/nasa-logo.png" alt="NASA Logo" class="logo">
             <ul class="nav-links">
                 <li><a href="#home" class="text-white">Home</a></li>
                 <li><a href="#about" class="text-white">About</a></li>
                 <li><a href="#contact" class="text-white">Contact</a></li>
             </ul>
-            <div class="hamburger">
+            <button class="hamburger" aria-label="Toggle navigation menu">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </button>
         </nav>
     </header>
 
-    <section id="home">
-        <h1 class="display-4 text-center">NASA Picture of the Day</h1>
-        <div class="container my-4">
-            <div class="row align-items-center justify-content-center">
-                <div class="col-md-2 text-md-right">
-                    <label for="date-picker" class="h4">Choose a date:</label>
+    <main>
+        <section id="home" aria-labelledby="home-heading">
+            <h1 id="home-heading" class="display-4 text-center">NASA Picture of the Day</h1>
+            <div class="container my-4">
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-md-2 text-md-right">
+                        <label for="date-picker" class="h4">Choose a date:</label>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="date-picker-container">
+                            <input type="date" id="date-picker" class="form-control form-control-lg" aria-label="Choose a date">
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="date-picker-container">
-                        <input type="date" id="date-picker" class="form-control form-control-lg">
+                <div class="row justify-content-center mt-3">
+                    <div class="col-md-8 text-center">
+                        <h2 id="picture-title" class="display-5"></h2>
                     </div>
                 </div>
             </div>
-            <div class="row justify-content-center mt-3">
-                <div class="col-md-8 text-center">
-                    <h2 id="picture-title" class="display-5"></h2>
+            <div class="content-container">
+                <div class="image-container">
+                    <img id="nasa-image" src="" alt="NASA Picture of the Day">
+                </div>
+                <div class="description-container">
+                    <h2>Description</h2>
+                    <p id="nasa-description"></p>
                 </div>
             </div>
-        </div>
-        <div class="content-container">
-            <div class="image-container">
-                <img id="nasa-image" src="" alt="NASA Picture of the Day">
+            <button id="favorite-button" class="styled-button btn btn-primary w-20 mt-3" aria-label="Add to favorites">Favorite</button> 
+            <div id="favorites-container" class="mt-3">
+                <div id="favorites" class="d-flex flex-wrap"></div>
             </div>
-            <div class="description-container">
-                <h2>Description</h2>
-                <p id="nasa-description"></p>
-            </div>
-        </div>
-        <button id="favorite-button" class="styled-button btn btn-primary w-20 mt-3">Favorite</button> 
-        <div id="favorites-container" class="mt-3">
-            <div id="favorites" class="d-flex flex-wrap"></div>
-        </div>
-    
-        <h2 class="display-4 h1">More Images</h2>
-        <div id="additional-images-container">
-            <div class="additional-image h4">
-                <h3>The day before</h3>
-                <img id="yesterday-image" src="" alt="Yesterday's NASA Picture">
-            </div>
-            <div class="additional-image h4">
-                <h3>Random Picture</h3>
-                <img id="random-image" src="" alt="Random NASA Picture">
-            </div>
-            <div class="additional-image h4">
-                <h3>Last Year</h3>
-                <img id="last-year-image" src="" alt="Last Year's NASA Picture">
-            </div>
-        </div>
-    </section>
 
-    <section id="about">
-        <h2 class="display-4 text-center">Discover the Cosmos, One Day at a Time.</h2>
-        <div class="container">
-            <div class="row justify-content-center">
+            <h2 class="display-4 h1">More Images</h2>
+            <div id="additional-images-container">
+                <div class="additional-image h4">
+                    <h3>The day before</h3>
+                    <img id="yesterday-image" src="" alt="Yesterday's NASA Picture">
+                </div>
+                <div class="additional-image h4">
+                    <h3>Random Picture</h3>
+                    <img id="random-image" src="" alt="Random NASA Picture">
+                </div>
+                <div class="additional-image h4">
+                    <h3>Last Year</h3>
+                    <img id="last-year-image" src="" alt="Last Year's NASA Picture">
+                </div>
+            </div>
+        </section>
+
+        <section id="about" aria-labelledby="about-heading">
+            <h2 id="about-heading" class="display-4 text-center">Discover the Cosmos, One Day at a Time.</h2>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-14">
+                        <p class="h5 p-3 text-justify">NASA's Picture of the Day is a captivating resource that unveils the mysteries of the universe, one image at a time. Every day, a new photo is carefully selected to showcase the incredible beauty and vastness of space, our own planet, and phenomena beyond our solar system. These images range from breathtaking shots of distant galaxies, vibrant nebulas, and star clusters to fascinating close-ups of planets, moons, and even rare events like solar flares and eclipses. Each photograph is paired with detailed insights and explanations written by NASA's experts, providing context that deepens your understanding of what you’re seeing. Whether capturing moments from NASA’s latest explorations or revealing the wonders of the night sky through satellite and telescope, NASA's Picture of the Day offers a unique window into the cosmos, inspiring curiosity and wonder for all who look.</p>
+                    </div>
+                </div>
+                <div class="stats d-flex justify-content-center">
+                    <div class="stat text-center">
+                        <div class="count-container">
+                            <span class="count display-4" data-target="6000">0</span>
+                            <span class="plus-sign display-4">+</span>
+                        </div>
+                        <p>Pictures</p>
+                    </div>
+                    <div class="stat text-center">
+                        <div class="count-container">
+                            <span class="count display-4" data-target="60">0</span>
+                            <span class="plus-sign display-4">+</span>
+                        </div>
+                        <p>Satellites</p>
+                    </div>
+                    <div class="stat text-center">
+                        <div class="count-container">
+                            <span class="count display-4" data-target="10000">0</span>
+                            <span class="plus-sign display-4">+</span>
+                        </div>
+                        <p>Images shown today</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="gallery mt-4" aria-labelledby="gallery-heading">
+            <div class="container">
+                <h2 id="gallery-heading" class="display-4 text-center mt-4 mb-4">Award winning photographs.</h2>
                 <div class="col-md-14">
-                    <p class="h5 p-3 text-justify">NASA's Picture of the Day is a captivating resource that unveils the mysteries of the universe, one image at a time. Every day, a new photo is carefully selected to showcase the incredible beauty and vastness of space, our own planet, and phenomena beyond our solar system. These images range from breathtaking shots of distant galaxies, vibrant nebulas, and star clusters to fascinating close-ups of planets, moons, and even rare events like solar flares and eclipses. Each photograph is paired with detailed insights and explanations written by NASA's experts, providing context that deepens your understanding of what you’re seeing. Whether capturing moments from NASA’s latest explorations or revealing the wonders of the night sky through satellite and telescope, NASA's Picture of the Day offers a unique window into the cosmos, inspiring curiosity and wonder for all who look.</p>
+                    <p class="h5 p-3 text-justify">Award-winning NASA photographs of constellations reveal the awe-inspiring beauty and mystery of our universe, capturing stars and celestial formations with remarkable clarity and depth. These images showcase intricate details of distant constellations, highlighting phenomena like star clusters, nebulae, and galactic landscapes in vivid colors. Through advanced imaging technology, NASA’s award-winning photos offer both scientific insight and artistic wonder, bringing the vastness of space into stunning focus and allowing viewers to explore the cosmos from Earth.</p>
+                </div>
+                <div class="row">
+                    <div class="col-md-3 mb-3">
+                        <img src="pictures/gallery13.jpg" alt="Award-winning photograph 1" class="img-thumbnail gallery-image">
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <img src="pictures/gallery14.jpg" alt="Award-winning photograph 2" class="img-thumbnail gallery-image">
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <img src="pictures/gallery3.jpg" alt="Award-winning photograph 3" class="img-thumbnail gallery-image">
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <img src="pictures/gallery2.jpg" alt="Award-winning photograph 4" class="img-thumbnail gallery-image">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3 mb-3">
+                        <img src="pictures/gallery16.jpg" alt="Award-winning photograph 5" class="img-thumbnail gallery-image">
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <img src="pictures/gallery17.jpg" alt="Award-winning photograph 6" class="img-thumbnail gallery-image">
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <img src="pictures/gallery6.jpg" alt="Award-winning photograph 7" class="img-thumbnail gallery-image">
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <img src="pictures/gallery8.jpg" alt="Award-winning photograph 8" class="img-thumbnail gallery-image">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3 mb-3">
+                        <img src="pictures/gallery9.jpg" alt="Award-winning photograph 9" class="img-thumbnail gallery-image">
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <img src="pictures/gallery10.jpg" alt="Award-winning photograph 10" class="img-thumbnail gallery-image">
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <img src="pictures/gallery11.jpg" alt="Award-winning photograph 11" class="img-thumbnail gallery-image">
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <img src="pictures/gallery12.jpg" alt="Award-winning photograph 12" class="img-thumbnail gallery-image">
+                    </div>
                 </div>
             </div>
-            <div class="stats d-flex justify-content-center">
-                <div class="stat text-center">
-                    <div class="count-container">
-                        <span class="count display-4" data-target="6000">0</span>
-                        <span class="plus-sign display-4">+</span>
-                    </div>
-                    <p>Pictures</p>
-                </div>
-                <div class="stat text-center">
-                    <div class="count-container">
-                        <span class="count display-4" data-target="60">0</span>
-                        <span class="plus-sign display-4">+</span>
-                    </div>
-                    <p>Satellites</p>
-                </div>
-                <div class="stat text-center">
-                    <div class="count-container">
-                        <span class="count display-4" data-target="10000">0</span>
-                        <span class="plus-sign display-4">+</span>
-                    </div>
-                    <p>Images shown today</p>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <div class="gallery mt-4">
-        <div class="container">
-            <h2 class="display-4 text-center mt-4 mb-4">Award winning photographs.</h2>
-            <div class="col-md-14">
-                <p class="h5 p-3 text-justify">Award-winning NASA photographs of constellations reveal the awe-inspiring beauty and mystery of our universe, capturing stars and celestial formations with remarkable clarity and depth. These images showcase intricate details of distant constellations, highlighting phenomena like star clusters, nebulae, and galactic landscapes in vivid colors. Through advanced imaging technology, NASA’s award-winning photos offer both scientific insight and artistic wonder, bringing the vastness of space into stunning focus and allowing viewers to explore the cosmos from Earth.</p>
-            </div>
-            <div class="row">
-                <div class="col-md-3 mb-3">
-                    <img src="pictures/gallery13.jpg" alt="Image 1" class="img-thumbnail gallery-image">
-                </div>
-                <div class="col-md-3 mb-3">
-                    <img src="pictures/gallery14.jpg" alt="Image 2" class="img-thumbnail gallery-image">
-                </div>
-                <div class="col-md-3 mb-3">
-                    <img src="pictures/gallery3.jpg" alt="Image 3" class="img-thumbnail gallery-image">
-                </div>
-                <div class="col-md-3 mb-3">
-                    <img src="pictures/gallery15.jpg" alt="Image 4" class="img-thumbnail gallery-image">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-3 mb-3">
-                    <img src="pictures/gallery16.jpg" alt="Image 5" class="img-thumbnail gallery-image">
-                </div>
-                <div class="col-md-3 mb-3">
-                    <img src="pictures/gallery17.jpg" alt="Image 6" class="img-thumbnail gallery-image">
-                </div>
-                <div class="col-md-3 mb-3">
-                    <img src="pictures/gallery7.jpg" alt="Image 7" class="img-thumbnail gallery-image">
-                </div>
-                <div class="col-md-3 mb-3">
-                    <img src="pictures/gallery8.jpg" alt="Image 8" class="img-thumbnail gallery-image">
+        <section id="contact" class="py-5" aria-labelledby="contact-heading">
+            <div class="container">
+                <div class="row contact-content">
+                    <div class="contact-text col-md-6">
+                        <h2 id="contact-heading" class="text-center h1">Get in touch and bring your vision to life.</h2>
+                        <p class="h5">NASA greatly values your opinions and suggestions, as they help shape our mission and enhance our services. We encourage you to share your thoughts with us, whether it’s feedback on our work, ideas for future projects, or questions about our discoveries. Our team is committed to listening, and we’ll get back to you as soon as possible. Thank you for being part of our journey to explore the universe!</p>
+                        <img src="pictures/gallery1.jpg" alt="Contact Image" class="img-fluid mt-3">
+                    </div>
+                    <div class="contact-form col-md-6">
+                        <form>
+                            <div class="form-group">
+                                <label for="name" class="form-label">Name</label>
+                                <input type="text" id="name" name="name" class="form-control" placeholder="Enter your name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone" class="form-label">Phone</label>
+                                <input type="tel" id="phone" name="phone" class="form-control" placeholder="Enter your phone number">
+                            </div>
+                            <div class="form-group">
+                                <label for="message" class="form-label">Message</label>
+                                <textarea id="message" name="message" rows="12" class="form-control" placeholder="Enter your message" required></textarea>
+                            </div>
+                            <button type="submit" class="styled-button btn btn-primary btn-block">Submit</button>
+                        </form>
+                    </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-3 mb-3">
-                    <img src="pictures/gallery9.jpg" alt="Image 9" class="img-thumbnail gallery-image">
-                </div>
-                <div class="col-md-3 mb-3">
-                    <img src="pictures/gallery10.jpg" alt="Image 10" class="img-thumbnail gallery-image">
-                </div>
-                <div class="col-md-3 mb-3">
-                    <img src="pictures/gallery11.jpg" alt="Image 11" class="img-thumbnail gallery-image">
-                </div>
-                <div class="col-md-3 mb-3">
-                    <img src="pictures/gallery12.jpg" alt="Image 12" class="img-thumbnail gallery-image">
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <section id="contact" class="py-5">
-        <div class="container">
-            <div class="row contact-content">
-                <div class="contact-text col-md-6">
-                    <h2 class="text-center h1">Get in touch and bring your vision to life.</h2>
-                    <p class="h5">NASA greatly values your opinions and suggestions, as they help shape our mission and enhance our services. We encourage you to share your thoughts with us, whether it’s feedback on our work, ideas for future projects, or questions about our discoveries. Our team is committed to listening, and we’ll get back to you as soon as possible. Thank you for being part of our journey to explore the universe!</p>
-                    <img src="pictures/gallery1.jpg" alt="Contact Image" class="img-fluid mt-3">
-                </div>
-                <div class="contact-form col-md-6">
-                    <form>
-                        <div class="form-group">
-                            <label for="name" class="form-label"></label>
-                            <input type="text" id="name" name="name" class="form-control" placeholder="Enter your name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email" class="form-label"></label>
-                            <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone" class="form-label"></label>
-                            <input type="tel" id="phone" name="phone" class="form-control" placeholder="Enter your phone number">
-                        </div>
-                        <div class="form-group">
-                            <label for="message" class="form-label"></label>
-                            <textarea id="message" name="message" rows="12" class="form-control" placeholder="Enter your message" required></textarea>
-                        </div>
-                        <button type="submit" class="styled-button btn btn-primary btn-block">Submit</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <!-- Image Modal -->
     <div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
@@ -207,7 +209,7 @@
     </div>
 
     <div id="full-size-image-container" class="hidden">
-        <button class="close-button">&times;</button>
+        <button class="close-button" aria-label="Close">&times;</button>
         <div class="full-size-content">
             <img id="full-size-image" src="" alt="Full Size NASA Picture">
             <div class="full-size-description">
@@ -218,7 +220,7 @@
     </div>
 
     <div id="additional-image-container" class="hidden">
-        <button class="close-button">&times;</button>
+        <button class="close-button" aria-label="Close">&times;</button>
         <img id="additional-image" src="" alt="Additional NASA Picture">
         <div class="additional-description">
             <h2>Description</h2>
@@ -226,12 +228,24 @@
         </div>
     </div>
 
-    
+    <section id="quote-section" class="py-5" aria-labelledby="quote-heading">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8 text-center">
+                    <blockquote class="blockquote">
+                        <p id="quote-text" class="mb-0"></p>
+                        <footer class="blockquote-footer" id="quote-author"></footer>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <footer>
         <p>&copy; David Munoz Jensen - 2024 / API by NASA / All images belong to NASA</p>
     </footer>
     <!-- Back to Top Button -->
-    <button id="backToTopBtn" class="btn btn-primary">
+    <button id="backToTopBtn" class="btn btn-primary" aria-label="Back to top">
         <i class="fas fa-arrow-up"></i>
     </button>
     <!-- Include jQuery and Bootstrap JS -->
