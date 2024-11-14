@@ -1,3 +1,7 @@
+html, body {
+    overflow-x: hidden; 
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -15,12 +19,11 @@ canvas#stars {
     z-index: -1;
 }
 
-
 header {
     position: fixed;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.8);
-    padding: 10px 0; /* Increased padding */
+    padding: 10px 0;
     z-index: 1000;
     transition: opacity 0.5s;
 }
@@ -34,13 +37,13 @@ header nav {
 }
 
 header nav .logo {
-    width: 70px; /* tamaño del logo */
+    width: 70px;
     margin-right: 20px;
 }
 
 header nav .nav-links {
     display: flex;
-    gap: 50px; 
+    gap: 50px;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -53,8 +56,8 @@ header nav .nav-links li {
 header nav .nav-links li a {
     color: white;
     text-decoration: none;
-    font-size: 1.5em;     
-    padding: 10px 20px; 
+    font-size: 1.5em;
+    padding: 10px 20px;
 }
 
 header nav .hamburger {
@@ -84,8 +87,8 @@ header nav .hamburger span {
     justify-content: center;
     align-items: center;
     z-index: 1001;
-    padding: 20px; /* Add padding for better spacing */
-    box-sizing: border-box; 
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 #full-size-image-container.hidden {
@@ -94,24 +97,23 @@ header nav .hamburger span {
 
 .full-size-content {
     display: flex;
-    align-items: center; 
-    gap: 20px; /* Space between image and description */
+    align-items: center;
+    gap: 20px;
     max-width: 90%;
     max-height: 90%;
 }
 
 #full-size-image {
-    max-width: 60%; 
-    max-height: 50%; 
-    object-fit: contain; /* Ensure the image maintains its aspect ratio */
-    
+    max-width: 50%;
+    max-height: 80%;
+    object-fit: contain;
 }
 
 .full-size-description {
     max-width: 40%;
     color: white;
     text-align: justify;
-    overflow-y: auto; /* Add scroll if the description is too long */
+    overflow-y: auto;
 }
 
 .close-button {
@@ -138,18 +140,32 @@ header nav .hamburger span {
 }
 
 .styled-button:hover {
-    background-color: #2a7a8a; /* hover color */
+    background-color: #2a7a8a;
 }
 
 section {
-    padding: 100px 10px; 
+    padding: 100px 10px;
     text-align: center;
     position: relative;
-    z-index: 1; 
+    z-index: 1;
 }
 
 #about, #contact {
-    padding: 50px 10px; /* Dedicated padding for About and Contact sections */
+    padding: 50px 10px;
+}
+
+#count-container {
+    padding: 0; /* Remove padding */
+    
+}
+
+.stats {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 50px 0; /* Increase padding to make the section bigger */
 }
 
 .content-container {
@@ -158,32 +174,32 @@ section {
     align-items: center;
     gap: 20px;
     margin: 20px auto;
-    max-width: 90%; 
+    max-width: 90%;
 }
 
 #nasa-image {
-    width: 65%; 
+    width: 65%;
     height: auto;
-    cursor: pointer; 
+    cursor: pointer;
     border: 2px solid #379CAC;
 }
 
 .description-container {
     text-align: justify;
-    max-width: 70%; 
+    max-width: 70%;
 }
 
 #favorites-container {
     margin-top: 20px;
     display: flex;
-    justify-content: center; /* Para centrar el contenedor de los favoritos */
+    justify-content: center;
 }
 
 #favorites {
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
-    justify-content: center; 
+    justify-content: center;
 }
 
 .favorite-item {
@@ -200,7 +216,7 @@ section {
     position: absolute;
     top: 0;
     right: 0;
-    background-color: #379CAC; 
+    background-color: #379CAC;
     color: white;
     border: none;
     cursor: pointer;
@@ -212,7 +228,7 @@ section {
     margin-top: 20px;
     display: flex;
     justify-content: center;
-    gap: 30px;
+    gap: 20px;
 }
 
 .additional-image {
@@ -220,9 +236,9 @@ section {
 }
 
 .additional-image img {
-    width: 250px;
-    height: auto;
-    cursor: pointer;
+    width: 100%;
+    height: 300px; 
+    object-fit: cover; 
     border: 2px solid #379CAC; 
 }
 
@@ -297,13 +313,12 @@ section {
 
 /* About Section */
 .about-content {
-    /* display: flex; */
     text-align: justify;
     justify-content: space-between;
     align-items: center;
     gap: 20px;
     margin: 20px auto;
-    max-width: 90%; 
+    max-width: 90%;
 }
 
 .about-text {
@@ -321,18 +336,21 @@ section {
     height: auto;
 }
 
-.stats {
-    display: flex;
-    justify-content: center;
-    gap: 20px; /* Reduced from 40px to bring boxes closer */
-    margin: 0 auto; /* Center the stats container */
-    max-width: 800px; /* Limit the width to keep boxes centered */
-    padding: 20px 0;
+#count-container {
+    padding: 0; /* Remove padding */
+    margin: 50px 0; /* Add margin to make the section bigger */
 }
 
-.stat {
-    text-align: center;
+.stats {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 20px;
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 20px 0; 
 }
+
 
 .count-container {
     display: flex;
@@ -341,17 +359,17 @@ section {
     border: 2px solid #379CAC;
     padding: 10px;
     border-radius: 10px;
-    min-width: 150px; 
+    min-width: 150px;
 }
 
 .count {
-    font-size: 2em;
+    font-size: 3em;
     font-weight: bold;
     color: white;
 }
 
 .plus-sign {
-    font-size: 2em;
+    font-size: 3em;
     color: #379CAC;
     margin-left: 5px;
 }
@@ -359,22 +377,31 @@ section {
 /* Gallery Images Hover Effect */
 .gallery-image {
     width: 100%;
-    height: 200px; /* Set a fixed height for all thumbnails */
+    height: 200px;
     object-fit: cover;
     cursor: pointer;
-    transition: transform 0.3s ease-in-out; /* Smooth transition for the pop-up effect */
+    transition: transform 0.3s ease-in-out;
 }
 
 .gallery-image:hover {
-    transform: scale(1.1); /* Scale the image to 110% on hover */
+    transform: scale(1.1);
 }
 
 .img-thumbnail {
-    background-color: transparent; /* Remove the white background */
-    border: 2px solid #379CAC; /* Custom border color */
-    width: 100%; /* Ensure the thumbnail takes the full width of the container */
-    height: 200px; /* Set the same fixed height for all thumbnails */
-    object-fit: cover; /* Ensure the image covers the entire thumbnail area */
+    background-color: transparent;
+    border: 2px solid #379CAC;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.gallery {
+    padding: 10px; 
+    margin-top: 20px;
+}
+
+.gallery .container {
+    padding: 0; 
 }
 
 /* Modal Styling */
@@ -390,26 +417,26 @@ section {
 
 /* Custom styles for the contact form */
 .contact-form {
-    background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent background */
+    background-color: rgba(255, 255, 255, 0.1);
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .contact-form .form-control {
-    background-color: rgba(255, 255, 255, 0.2); /* Slightly transparent input background */
+    background-color: rgba(255, 255, 255, 0.2);
     border: 1px solid #379CAC;
     color: white;
 }
 
 .contact-form .form-control::placeholder {
-    color: #ccc; /* Placeholder color */
+    color: #ccc;
 }
 
 .contact-form .form-control:focus {
-    background-color: rgba(255, 255, 255, 0.3); /* Slightly more transparent on focus */
-    border-color: #379CAC; /* Border color on focus */
-    box-shadow: none; /* Remove default focus shadow */
+    background-color: rgba(255, 255, 255, 0.3);
+    border-color: #379CAC;
+    box-shadow: none;
 }
 
 .contact-form .styled-button {
@@ -424,7 +451,7 @@ section {
 }
 
 .contact-form .styled-button:hover {
-    background-color: #2a7a8a; /* Slightly darker on hover */
+    background-color: #2a7a8a;
 }
 
 .contact-text {
@@ -438,6 +465,11 @@ section {
 
 #about {
     margin-top: 0;
+    margin-bottom: 20px; /* Reduce the bottom margin */
+}
+
+.gallery {
+    margin-top: 20px; /* Reduce the top margin */
 }
 
 /* Center the specific h2 element */
@@ -465,9 +497,9 @@ footer {
     background-color: #379CAC;
     border: none;
     color: white;
-    width: 50px; 
-    height: 50px; 
-    border-radius: 50%; 
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
     font-size: 24px;
     z-index: 1000;
     cursor: pointer;
@@ -477,11 +509,30 @@ footer {
 }
 
 #backToTopBtn:hover {
-    background-color: #2a7a8a; /* Slightly darker on hover */
+    background-color: #2a7a8a;
 }
 
 #backToTopBtn:focus {
     outline: none;
+}
+
+header nav .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    background: none; /* Remove background */
+    border: none; /* Remove border */
+    padding: 0; /* Remove padding */
+}
+
+header nav .hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: white; /* Ensure the lines are white */
+    border-radius: 5px;
 }
 
 /* Responsive Styles */
@@ -505,7 +556,7 @@ footer {
 
     header nav .hamburger {
         display: flex;
-        right: 30px; /* Adjusted to not be too close to the right edge */
+        right: 30px;
     }
 
     .about-content, .contact-content {

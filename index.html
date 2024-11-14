@@ -49,7 +49,7 @@
             </div>
             <div class="content-container">
                 <div class="image-container">
-                    <img id="nasa-image" src="" alt="NASA Picture of the Day">
+                    <img id="nasa-image" src="" alt="NASA Picture of the Day" class="img-fluid">
                 </div>
                 <div class="description-container">
                     <h2>Description</h2>
@@ -61,19 +61,20 @@
                 <div id="favorites" class="d-flex flex-wrap"></div>
             </div>
 
-            <h2 class="display-4 h1">More Images</h2>
-            <div id="additional-images-container">
-                <div class="additional-image h4">
-                    <h3>The day before</h3>
-                    <img id="yesterday-image" src="" alt="Yesterday's NASA Picture">
+            <h2 id="about-heading" class="display-4 text-center mt-3 mb-3">Discover more Pictures.</h2>
+            <div id="additional-images-container" class="row">
+                
+                <div class="additional-image col-md-4 text-center">
+                    <h3>The picture from Yesterday</h3>
+                    <img id="yesterday-image" src="" alt="Yesterday's NASA Picture" class="img-fluid">
                 </div>
-                <div class="additional-image h4">
-                    <h3>Random Picture</h3>
-                    <img id="random-image" src="" alt="Random NASA Picture">
+                <div class="additional-image col-md-4 text-center">
+                    <h3>Random Picture of the Day</h3>
+                    <img id="random-image" src="" alt="Random NASA Picture" class="img-fluid">
                 </div>
-                <div class="additional-image h4">
-                    <h3>Last Year</h3>
-                    <img id="last-year-image" src="" alt="Last Year's NASA Picture">
+                <div class="additional-image col-md-4 text-center">
+                    <h3>This Day a Year Ago</h3>
+                    <img id="last-year-image" src="" alt="Last Year's NASA Picture" class="img-fluid">
                 </div>
             </div>
         </section>
@@ -86,27 +87,33 @@
                         <p class="h5 p-3 text-justify">NASA's Picture of the Day is a captivating resource that unveils the mysteries of the universe, one image at a time. Every day, a new photo is carefully selected to showcase the incredible beauty and vastness of space, our own planet, and phenomena beyond our solar system. These images range from breathtaking shots of distant galaxies, vibrant nebulas, and star clusters to fascinating close-ups of planets, moons, and even rare events like solar flares and eclipses. Each photograph is paired with detailed insights and explanations written by NASA's experts, providing context that deepens your understanding of what you’re seeing. Whether capturing moments from NASA’s latest explorations or revealing the wonders of the night sky through satellite and telescope, NASA's Picture of the Day offers a unique window into the cosmos, inspiring curiosity and wonder for all who look.</p>
                     </div>
                 </div>
-                <div class="stats d-flex justify-content-center">
-                    <div class="stat text-center">
+                
+            </div>
+        </section>
+
+        <section id="count-container" aria-labelledby="counter-heading">
+            <div class="container">
+                <div class="row stats justify-content-center">
+                    <div class="col-md-4 col-sm-6 stat text-center mb-4">
                         <div class="count-container">
                             <span class="count display-4" data-target="6000">0</span>
                             <span class="plus-sign display-4">+</span>
                         </div>
-                        <p>Pictures</p>
+                        <p class="h3 p-3 text-center">Photographs</p>
                     </div>
-                    <div class="stat text-center">
+                    <div class="col-md-4 col-sm-6 stat text-center mb-4">
                         <div class="count-container">
                             <span class="count display-4" data-target="60">0</span>
                             <span class="plus-sign display-4">+</span>
                         </div>
-                        <p>Satellites</p>
+                        <p class="h3 p-3 text-center">Nasa Satellites</p>
                     </div>
-                    <div class="stat text-center">
+                    <div class="col-md-4 col-sm-6 stat text-center mb-4">
                         <div class="count-container">
                             <span class="count display-4" data-target="10000">0</span>
                             <span class="plus-sign display-4">+</span>
                         </div>
-                        <p>Images shown today</p>
+                        <p class="h3 p-3 text-center">Images shown today</p>
                     </div>
                 </div>
             </div>
@@ -114,7 +121,7 @@
 
         <section class="gallery mt-4" aria-labelledby="gallery-heading">
             <div class="container">
-                <h2 id="gallery-heading" class="display-4 text-center mt-4 mb-4">Award winning photographs.</h2>
+                <h2 id="gallery-heading" class="display-4 text-center">Award winning photographs.</h2>
                 <div class="col-md-14">
                     <p class="h5 p-3 text-justify">Award-winning NASA photographs of constellations reveal the awe-inspiring beauty and mystery of our universe, capturing stars and celestial formations with remarkable clarity and depth. These images showcase intricate details of distant constellations, highlighting phenomena like star clusters, nebulae, and galactic landscapes in vivid colors. Through advanced imaging technology, NASA’s award-winning photos offer both scientific insight and artistic wonder, bringing the vastness of space into stunning focus and allowing viewers to explore the cosmos from Earth.</p>
                 </div>
@@ -227,19 +234,6 @@
             <p id="additional-description"></p>
         </div>
     </div>
-
-    <section id="quote-section" class="py-5" aria-labelledby="quote-heading">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-8 text-center">
-                    <blockquote class="blockquote">
-                        <p id="quote-text" class="mb-0"></p>
-                        <footer class="blockquote-footer" id="quote-author"></footer>
-                    </blockquote>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <footer>
         <p>&copy; David Munoz Jensen - 2024 / API by NASA / All images belong to NASA</p>
