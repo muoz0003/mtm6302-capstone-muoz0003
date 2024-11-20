@@ -116,7 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     async function fetchNasaImage(date) {
         try {
-            const response = await fetch(`https://api.nasa.gov/planetary/apod?api_key=xO3eVxQ1tHI0QYeJ2UPiEirooj2g5ei8oGsAfInY&date=${date}`);
+            const response = await fetch(`https://api.nasa.gov/planetary/apod?api_key=xO3eVxQ1tHI0QYeJ2UPiEirooj2g5ei8oGsAfInY&date=${date}`); //date parameter added
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }

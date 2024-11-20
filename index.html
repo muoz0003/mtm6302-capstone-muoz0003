@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NASA Picture of the Day</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/scrollcue@1.0.0/dist/scrollCue.min.css">
     <link rel="stylesheet" href="styles.css">
@@ -210,34 +210,28 @@
             <div class="modal-content bg-transparent border-0">
                 <div class="modal-body p-0">
                     <img id="modalImage" src="" alt="" class="img-fluid">
-                    <div id="modalDescription" class="full-size-description"></div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Copyright Modal -->
-    <div class="modal fade" id="copyrightModal" tabindex="-1" aria-labelledby="copyrightModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content" style="background-color: rgba(255, 255, 255, 0.1); padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="copyrightModalLabel">Copyright Information</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <p>&copy; 2024 David Muñoz Jensen. All rights reserved.</p>
-                    <p>All images and data fetched from the NASA API belong to NASA.</p>
-                    <p>Scripts used in this project:</p>
-                    <ul>
-                        <li>Bootstrap: © 2011-2021 Twitter, Inc. Code licensed under MIT.</li>
-                        <li>jQuery: © 2021 OpenJS Foundation and jQuery contributors. Code licensed under MIT.</li>
-                        <li>Popper.js: © 2016-2021 Federico Zivolo. Code licensed under MIT.</li>
-                        <li>ScrollCue: © 2021 ScrollCue contributors. Code licensed under MIT.</li>
-                    </ul>
-                </div>
+    <div id="full-size-image-container" class="hidden">
+        <button class="close-button" aria-label="Close">&times;</button>
+        <div class="full-size-content">
+            <img id="full-size-image" src="" alt="Full Size NASA Picture">
+            <div class="full-size-description">
+                <h2>Description</h2>
+                <p id="full-size-description"></p>
             </div>
+        </div>
+    </div>
+
+    <div id="additional-image-container" class="hidden">
+        <button class="close-button" aria-label="Close">&times;</button>
+        <img id="additional-image" src="" alt="Additional NASA Picture">
+        <div class="additional-description">
+            <h2>Description</h2>
+            <p id="additional-description"></p>
         </div>
     </div>
 
@@ -253,9 +247,9 @@
     <!-- Include jQuery and Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <!-- Popper.js (for Bootstrap) -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <!-- Bootstrap JS -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <!-- ScrollCue JS -->
     <script src="https://cdn.jsdelivr.net/npm/scrollcue@1.0.0/dist/scrollCue.min.js"></script>
     <!-- Your custom JS -->
