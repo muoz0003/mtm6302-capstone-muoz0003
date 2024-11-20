@@ -11,7 +11,7 @@ This repository contains the source code for the **Capstone Project: Astronomy P
 The **Capstone Project: Astronomy Picture of the Day Search** focuses on creating a website to demonstrate the API from NASA that shows pictures of the galaxy for each day. The mockup is focused on Desktop, Tablet, and Mobile screen sizes. In the mockup folder in part 2 branch, you can find the respective PDF for each one. My intention is to make a one-page scrolling website with a quick link menu that will jump to a specific part of the page instead of loading another page. There will be animations for buttons, and the about page will display how many pictures the site has displayed on that particular date. Additionally, there will be another section for the picture of yesterday, random picture, and a last year picture that users can access. Finally, there will be a contact form that users can use to send feedback or messages. This will be coded in JS.
 
 ## Project Supervisor
-All the coding in this project was made by David Muñoz Jensen and under the guide of Professor David Plata Ramirez for the WMTM6302 section 3 Web Development class in Algonquin College.
+All the coding in this project was made by David Muñoz Jensen and under the guide of Professor David Plata Ramirez for the MTM6302 section 3 Web Development III course in Algonquin College.
 
 ## Process
 
@@ -31,14 +31,31 @@ All the coding in this project was made by David Muñoz Jensen and under the gui
 - **ARIA Labels and Accessibility**: Improved accessibility with ARIA labels and semantic HTML.
 - **Interactive Gallery**: A gallery showcasing award-winning photographs with hover effects and a modal for viewing full-size images.
 
-## Animated Background
+## Dynamic Night Sky Background
 
-The background features a dynamic night sky with moving stars, created using the HTML5 `<canvas>` element and JavaScript. The stars move slowly to simulate a night sky, adding a visually appealing and immersive experience for users.
+The background of the web application features a dynamic night sky with moving stars, created using the HTML5 `<canvas>` element and JavaScript. This background adds a visually appealing and immersive experience for users, enhancing the overall aesthetic of the application.
 
-### Implementation
+### Implementation Details
 
-- **Canvas Element**: Used to draw the stars.
-- **JavaScript**: Handles the animation of the stars, including their movement and rendering.
+1. **HTML5 `<canvas>` Element**:
+   - The `<canvas>` element is used to draw the night sky. It is positioned as a fixed background, covering the entire viewport.
+   - The canvas is set to cover the full width and height of the viewport, ensuring that the dynamic background is always visible.
+
+2. **JavaScript for Animation**:
+   - JavaScript is used to create and animate the stars. The stars are represented as small circles drawn on the canvas.
+   - An array of star objects is created, each with properties such as position, radius, and speed.
+   - The `drawStars` function iterates through the array of stars, drawing each one on the canvas.
+   - The `updateStars` function updates the position of each star, creating the illusion of movement. Stars that move out of the viewport are repositioned to the opposite side, ensuring a continuous animation.
+   - The `animate` function uses `requestAnimationFrame` to create a smooth animation loop, continuously calling the `drawStars` and `updateStars` functions.
+
+3. **Visual Effects**:
+   - The stars are given a slight variation in size and speed to create a more natural and realistic effect.
+   - The background color of the canvas is set to a dark shade to simulate the night sky, with stars appearing as small, bright points of light.
+   - The movement of the stars is subtle and slow, adding to the calming and immersive experience.
+
+4. **Performance Considerations**:
+   - The animation is optimized to ensure smooth performance across different devices and screen sizes.
+   - The number of stars and their properties are carefully chosen to balance visual appeal and performance.
 
 
 ## Resources Used
