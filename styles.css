@@ -495,13 +495,13 @@ footer {
 
 /* Footer link color */
 footer a {
-    color: #379CAC; /* Change the link color to #379CAC */
-    text-decoration: none; /* Optional: Remove underline */
+    color: #379CAC; 
+    text-decoration: none; 
 }
 
 footer a:hover {
-    color: #2a7a8a; /* Optional: Change color on hover */
-    text-decoration: underline; /* Optional: Add underline on hover */
+    color: #2a7a8a; 
+    text-decoration: underline; 
 }
 
 /* Back to Top Button */
@@ -539,15 +539,15 @@ header nav .hamburger {
     cursor: pointer;
     position: absolute;
     right: 20px;
-    background: none; /* Remove background */
-    border: none; /* Remove border */
-    padding: 0; /* Remove padding */
+    background: none; 
+    border: none; 
+    padding: 0; 
 }
 
 header nav .hamburger span {
     width: 25px;
     height: 3px;
-    background-color: white; /* Ensure the lines are white */
+    background-color: white; 
     border-radius: 5px;
 }
 
@@ -560,19 +560,19 @@ header nav .hamburger span {
     .count-container {
         flex-direction: column;
         padding: 5px;
-        border: 1px solid #379CAC; /* Ensure the border is visible on smaller screens */
+        border: 1px solid #379CAC;
         border-radius: 10px;
-        margin-bottom: 10px; /* Add some space below the count container */
+        margin-bottom: 10px; 
         width: 100%; /* Make the count container take full width */
-        text-align: center; /* Center align the text */
+        text-align: center; 
     }
 
     .count {
-        font-size: 2em; /* Adjust font size for smaller screens */
+        font-size: 2em; 
     }
 
     .plus-sign {
-        font-size: 2em; /* Adjust font size for smaller screens */
+        font-size: 2em; 
     }
 
     .stat p {
